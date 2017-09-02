@@ -1,0 +1,54 @@
+1)Why set up an object for the stones and not a series of variables?
+
+	What's the difference and when would I know when to do what?
+
+
+
+
+2)return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+Where is my understanding flawed?  For the stone, our max is 12 our min is 1 but the function will naturally include zero as a min so we add one. (12 - 0 + 1) = 13
+
+So we are picking a random number up to but not including 13...cool makes sense.  Why do we add another zero at the end then?  Isn't that superfluous?
+
+3)
+At this point in the code, I would expect to see a game score of zero in the console and a random number between 19 and 120?  What am I misunderstanding about the use of console log.
+
+	var startGame = function(){
+
+//reset score funtion
+
+gameScore = 0;
+
+//set new target function
+
+targetScore = randomizer(19,120)
+
+console.log(gameScore)
+console.log(targetScore)
+
+
+4)
+Is the reason why we don't call a function on the whole stone object because the randomize function would not select a new value for each obj property?  Still trying to come up with a reason as to why we are using an object here rather than a series of variables.  Still can't find a use.
+
+5)
+Is there a way to turn this into an each function that iterates over an object like so and assigns new values to each crystal?
+
+"You can use the for-in loop as shown by others. However, you also want to make sure that the key you get is an actual property of an object, and doesn't come from the prototype:
+
+for (var key in p) {
+  if (p.hasOwnProperty(key)) {
+    console.log(key + " -> " + p[key]);
+  }
+}"
+
+
+//set new score for each stone function
+stones.green.value = randomizer(1,12)
+stones.blue.value = randomizer(1,12)
+stones.red.value = randomizer(1,12)
+stones.yellow.value = randomizer(1,12)
+
+
+Again, here I would expect to see what numbers the randomizer has chosen if I console.log(stones or stones.green.value)  I see nothing.  I even tried console.log('Hi')...no luck.  I have asked questions about this and it seems clear and then I go home and try it and it doesn't work.  The answers online seem oversimplified like "did you refresh your browser?"  Yes I did. Any help?
+
