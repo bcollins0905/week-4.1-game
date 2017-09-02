@@ -52,3 +52,51 @@ stones.yellow.value = randomizer(1,12)
 
 Again, here I would expect to see what numbers the randomizer has chosen if I console.log(stones or stones.green.value)  I see nothing.  I even tried console.log('Hi')...no luck.  I have asked questions about this and it seems clear and then I go home and try it and it doesn't work.  The answers online seem oversimplified like "did you refresh your browser?"  Yes I did. Any help?
 
+
+I think I should always be getting affirmation that what I am doing is correct but with my current knowledge, I still wouldn't be sure if my randomizer works.
+
+By this point (game.js line 67), I have a game value box and a target value box on my game page but neither are displaying numbers. RAWR
+
+Why at line 100 am I getting an unexpected token if error?  It seems fine to me...
+
+var checkWin = function()
+
+if (gameScore > targetScore) { <------the error is occurring here
+alert("Sorry. You lost!");
+console.log("You Lost");
+
+lossesScore++
+
+$("#loss-count").html(lossesScore);
+
+startGame()
+
+}
+
+else if (gameScore === targetScore){
+	alert("You Win!")
+	console.log("You Win")
+
+	winsScore++
+
+	$("#win-count").html(winsScore);
+
+	startGame();
+	}
+};
+
+
+5) The solution has the if statement inside parentesis and when it runs it works.  My program did not run and it was written similarly unless the it was written as follows:
+
+var checkWin = function(){
+
+if (gameScore > targetScore) { 
+alert("Sorry. You lost!");
+console.log("You Lost");
+
+the example was written like so:
+
+var checkWin = function(
+if (gameScore > targetScore) { 
+
+The app ran succesfully but mine would not...any ideas?
